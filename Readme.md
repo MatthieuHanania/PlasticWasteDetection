@@ -26,11 +26,13 @@ By defalt, the access ip is http://127.0.0.1:8000/dataction/
 After accessing to the home page, 4 pages are availables:
 
 **Soumettre une image**: this page allows you to upload an image , the AI will analyse it and highlight the potential plastic bottle.
--> bouteille.PNG
+![Bottle detected](https://github.com/MatthieuHanania/PlasticWasteDetection/blob/main/presentation/bouteille.PNG)
 
 if a bottle is detected, the metadata of the picture will be added in a database.
 
 **Carte des déchets** : This interactive map displays all the waste geolocalisation from the database.
+
+![map](https://github.com/MatthieuHanania/PlasticWasteDetection/blob/main/presentation/points%20on%20a%20map.png)
 
 **Liste des points GPS**: This represent the database, we can select each point and vizualise it on the map
 
