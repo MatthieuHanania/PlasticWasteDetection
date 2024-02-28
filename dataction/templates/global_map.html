@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+	<meta charset="utf-8">
+	{% load static %}
+    <link rel="icon" href="{% static 'Logo_dataction.ico' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Crete+Round">
+
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 600px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: { lat: {{ point_list.0.lat }}, lng: {{ point_list.0.long }} },
+        });
+
+        const svgMarkerRed = {
+            path: "M10.453 14.016l6.563-6.609-1.406-1.406-5.156 5.203-2.063-2.109-1.406 1.406zM12 2.016q2.906 0 4.945 2.039t2.039 4.945q0 1.453-0.727 3.328t-1.758 3.516-2.039 3.070-1.711 2.273l-0.75 0.797q-0.281-0.328-0.75-0.867t-1.688-2.156-2.133-3.141-1.664-3.445-0.75-3.375q0-2.906 2.039-4.945t4.945-2.039z",
+            fillColor: '#FF0000',
+            fillOpacity: .6,
+            anchor: new google.maps.Point(15,30),
+            strokeWeight: 0,
+            scale: 1
+        };
+
+        const svgMarkerBlue = {
+            path: "M10.453 14.016l6.563-6.609-1.406-1.406-5.156 5.203-2.063-2.109-1.406 1.406zM12 2.016q2.906 0 4.945 2.039t2.039 4.945q0 1.453-0.727 3.328t-1.758 3.516-2.039 3.070-1.711 2.273l-0.75 0.797q-0.281-0.328-0.75-0.867t-1.688-2.156-2.133-3.141-1.664-3.445-0.75-3.375q0-2.906 2.039-4.945t4.945-2.039z",
+            fillColor: '#0022ff',
+            fillOpacity: .6,
+            anchor: new google.maps.Point(15,30),
+            strokeWeight: 0,
+            scale: 1
+        };
+
+        {% for point in point_list %}
+
+            {% if point.clean_state == True %}
+                console.log("coucou")
+                new google.maps.Marker({
+                position: { lat: {{point.lat}}, lng: {{point.long}} },
+                map: map,
+                icon: svgMarkerBlue,
+            });
+
+            {% else %}
+                console.log("pas coucou")
+                new google.maps.Marker({
+                position: { lat: {{point.lat}}, lng: {{point.long}} },
+                map: map,
+                icon: svgMarkerRed,
+            });
+            {% endif %}
+        {% endfor %}
+
+      }
+    </script>
+  </head>
+  <body>
+  
+  <div id="app">
+          <header id="main-image">
+            <div class="wrapper">
+              <h1 style="margin-top: 100px;" onclick="location.href='{% url 'dataction:home' %}';" style="cursor: pointer;">Dataction<span class="bleu">.</span></h1>
+              <nav style="margin-top: 125px;">
+                <a class="nav" href="{% url 'dataction:home' %}"> Accueil </a>
+                <a class="nav" href='{% url "dataction:submit" %}'> Soumettre une image </a>
+                <a class="nav" href='{% url "dataction:global_map" %}'> Carte des déchets </a>
+                <a class="nav" href='{% url "dataction:point_index" %}'> Liste des points GPS </a>
+
+              </nav>
+            </div>
+          </header>
+          <div class="bar"></div>
+
+  <h3 class="h3">My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoK3ADy19VBqDadAOVkot5DssFoEMHMq8&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+      <p style="margin-bottom: 100px"></p>
+  </body>
+</html>

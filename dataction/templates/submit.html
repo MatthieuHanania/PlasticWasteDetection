@@ -1,0 +1,38 @@
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Dataction</title>
+		{% load static %}
+        <link rel="icon" href="{% static 'Logo_dataction.ico' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Crete+Round">
+    </head>
+    <body>
+        <div id="app">
+          <header id="main-image">
+            <div class="wrapper">
+              <h1 style="margin-top: 100px;" onclick="location.href='{% url 'dataction:home' %}';" style="cursor: pointer;">Dataction<span class="bleu">.</span></h1>
+              <nav style="margin-top: 125px;">
+                <a class="nav" href="{% url 'dataction:home' %}"> Accueil </a>
+                <a class="nav" href='{% url "dataction:submit" %}'> Soumettre une image </a>
+                <a class="nav" href='{% url "dataction:global_map" %}'> Carte des déchets </a>
+                <a class="nav" href='{% url "dataction:point_index" %}'> Liste des points GPS </a>
+
+              </nav>
+            </div>
+          </header>
+          <div class="bar"></div>
+
+{% if error %}
+<h3>{{error}}</h3>
+<br>
+{% endif %}
+
+
+<h2 class="h2">Choix de l'image :</h2>
+  <form class="formulaire" method="post", action="{% url 'dataction:test' %}">
+    {% csrf_token %}
+    <input class="button1" style="font-family: 'Crete Round', serif;" type="file" id="document" name="document",accept=".png, .jpg, .jpeg">
+      <br>
+    <input class="button" style="font-family: 'Crete Round', serif;" type="submit" value="Valider">
+  </form>

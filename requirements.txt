@@ -1,0 +1,7 @@
+Django
+Pillow
+numpy
+tensorflow
+Pillow
+six
+object_detection

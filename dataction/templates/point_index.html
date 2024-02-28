@@ -1,0 +1,46 @@
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Dataction</title>
+		{% load static %}
+        <link rel="icon" href="{% static 'Logo_dataction.ico' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Crete+Round">
+    </head>
+    <body>
+        <div id="app">
+          <header id="main-image">
+            <div class="wrapper">
+              <h1 style="margin-top: 100px;" onclick="location.href='{% url 'dataction:home' %}';" style="cursor: pointer;">Dataction<span class="bleu">.</span></h1>
+              <nav style="margin-top: 125px;">
+                <a class="nav" href="{% url 'dataction:home' %}"> Accueil </a>
+                <a class="nav" href='{% url "dataction:submit" %}'> Soumettre une image </a>
+                <a class="nav" href='{% url "dataction:global_map" %}'> Carte des déchets </a>
+                <a class="nav" href='{% url "dataction:point_index" %}'> Liste des points GPS </a>
+
+              </nav>
+            </div>
+          </header>
+          <div class="bar"></div>
+
+
+
+
+{% if point_list %}
+    <table>
+        <thead>
+            <tr>
+                <th><h3> Cordonnées GPS des déchets</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for point in point_list %}
+            <tr>
+                <td><a href="{% url 'dataction:detail' point.id %}">{{ point.coord }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No point are available.</p>
+{% endif %}

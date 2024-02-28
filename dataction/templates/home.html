@@ -1,0 +1,44 @@
+
+<!doctype>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Dataction</title>
+		{% load static %}
+        <link rel="icon" href="{% static 'Logo_dataction.ico' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Crete+Round">
+    </head>
+    <body>
+    <div id="app">
+        <header id="main-image">
+            <div class="wrapper">
+                <h1 style="margin-top: 100px;" onclick="location.href='{% url 'dataction:home' %}';" style="cursor: pointer;">Dataction<span class="bleu">.</span></h1>
+                <nav style="margin-top: 125px;">
+                    <a class="nav" href="{% url 'dataction:home' %}"> Accueil </a>
+                    <a class="nav" href='{% url "dataction:submit" %}'> Soumettre une image </a>
+                    <a class="nav" href='{% url "dataction:global_map" %}'> Carte des déchets </a>
+                    <a class="nav" href='{% url "dataction:point_index" %}'> Liste des points GPS </a>
+
+                </nav>
+            </div>
+        </header>
+        <div class="bar"></div>
+        <div id="accueil-image">
+            <br><br><br><br><br><br>
+            <div class="presentation">
+                <h3 class="h3">Quel problème actuel ?</h3>
+                <br>
+                <p class="p">Depuis plusieurs années, la quantité de déchets plastiques ne cesse d’augmenter et de polluer notre environnement.<br>C’est pourquoi notre équipe a décidé de se mettre à l’épreuve afin de pouvoir remédier à ce problème aux enjeux non négligeables.</p>
+                <br>
+                <h3 class="h3">Qui sommes-nous ?</h3>
+                <br>
+                <p class="p">Nous sommes une équipe de l’entreprise DATACTION composée de 6 étudiants en troisième année d’école d’ingénieur EFREI Paris<br> BEKHOUCHE Abdel Hak, BOUDIN Armand, CAILLEUX Nil, GWET Karis, HANANIA Mathieu et ILOO LIANDJA Moïse.</p>
+                <br>
+                <h3 class="h3">Que proposons-nous ?</h3>
+                <p class="p">Notre objectif est de concevoir une application visant à détecter et cartographier les déchets plastiques afin d’agir pour le bien de notre environnement.</p>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

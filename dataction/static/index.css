@@ -1,0 +1,198 @@
+/* General */
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Arial, sans-serif;
+	font-size: 15px;
+}
+
+h1{
+	font-family: 'Crete Round', serif;
+	font-size: 45px;
+	color: rgb(0, 0, 0);
+}
+
+.h2{
+	font-family: 'Crete Round', serif;
+	margin: 50px auto;
+	text-align: center;
+	color: rgb(0, 0, 0);
+	font-size: 55px;
+
+}
+.h3{
+	font-family: 'Crete Round', serif;
+	font-size: 30px;
+	color: rgb(0, 0, 0);
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+centre{
+	margin: 10px auto;
+	text-align: center;
+}
+
+.presentation{
+	border: solid;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 10% / 40%;
+	height: 750px;
+	background-color: rgba(106, 106, 106, 0.48);
+	width: 1500px;
+	flex: auto;
+}
+
+table{
+	margin: 50px auto;
+	border: 3px solid;
+
+}
+
+td{
+	border: 2px solid;
+}
+
+td:hover{
+	border: solid;
+	 border-color: #047d9b;
+	 background-color: #047d9b;
+	 color: #000000;
+}
+
+.p{
+	font-family: 'Crete Round', serif;
+	line-height: 35px;
+	color: white;
+}
+ul{
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+.wrapper{
+	width: 940px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.bleu{
+	color: #047d9b;
+}
+
+/*Header*/
+ #main-image{
+ 	height: 250px;
+	margin-left: 50px;
+	background: url('Logo_datction.png') no-repeat left;
+
+ }
+
+ #accueil-image{
+	 height: 1000px;
+	 background: url('Plastics.jpg') no-repeat left;
+ }
+ header{
+ 	height: 250px;
+	margin-top: 25px;
+ }
+
+ header h1{
+ 	float:  left;
+ 	margin-top: 32px;
+ }
+
+ header nav{
+ 	float: right;
+ 	margin-top: 50px;
+ }
+
+
+ .nav{
+ 	text-transform: uppercase;
+ 	font-weight: bold;
+	margin-right: 20px;
+ }
+
+ .nav:hover{
+	 border: solid;
+	 border-radius: 10% / 60%;
+	 border-color: #047d9b;
+	 background-color: #047d9b;
+	 color: #000000;
+ } 
+
+ #currentpage{
+	border-bottom: 2px solid;
+ 	border-bottom-color: #047d9b;
+}
+
+.bar{
+	border: solid 3px;
+
+}
+
+ /* Main Image */
+
+ #main{
+	 height: 580px;
+ }
+
+ #main h2{
+ 	font-weight: normal;
+ 	text-transform: uppercase;
+ 	text-align: center;
+ 	padding: 150px 0 40px 0;
+ 	margin-bottom: 20px;
+ }
+ .button1{
+	margin-top: 20px;
+	font-size: 25px;
+
+ }
+
+
+
+ .button1:hover{
+	 color: #000000;
+	 font-family: 'Crete Round', serif;
+ }
+
+
+ .button{
+	margin-top: 20px;
+	font-size: 25px;
+
+ }
+
+
+
+ .button:hover{
+	 border: solid;
+	 border-radius: 30%;
+	 border-color: #047d9b;
+	 background-color: #047d9b;
+	 color: #000000;
+	 font-family: 'Crete Round', serif;
+ }
+
+.formulaire{
+	box-shadow: 2px 2px 2px #047d9b;
+	background-color: rgb(199, 199, 199);
+	text-align: center;
+	font-size: 25px;
+	height: 150px;	
+	width: 500px;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 10px;
+}
